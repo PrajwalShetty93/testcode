@@ -39,3 +39,11 @@ root1.right=TreeNode(3)
 # root1.right.left=TreeNode(4)
 sol=Solution()
 print(sol.isSameTree(root,root1))
+
+
+
+for bfs
+use a queue, no Recursion
+add root to queue
+pop from queu and add childern,
+next iteration, pop and add children
