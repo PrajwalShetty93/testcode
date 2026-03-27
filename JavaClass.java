@@ -14,6 +14,6 @@ public class JavaClass {
 
     public static void main(String[] args)
     {
-        JavaClass jc=new JavaClass(null, 0)
+        JavaClass jc=new JavaClass(null, 0);
     }
 }
