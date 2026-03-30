@@ -2,7 +2,7 @@ from typing import List
 
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        1,2,4,6
+
         prefix = [1 for _ in range(len(nums))]
         postfix = [1 for _ in range(len(nums))]
         product= 1
@@ -40,3 +40,6 @@ for i in range(0,5):
 for i in range(5,0,-1):   #It will skip 0, so for list iteration in reverse,use -1 to stop  range(start,stop,step)
     print(i)
 
+# Another problem but remember this
+# If i in list:   if this is a list , its O(n)
+# If i in set: because its a set its O(1)
