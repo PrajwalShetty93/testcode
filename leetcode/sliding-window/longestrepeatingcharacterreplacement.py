@@ -39,10 +39,33 @@ class Solution:
                 
 
         return res
+    
+
+
+    def characterReplacement_forLoop(self, s: str, k: int) -> int:
+        res=0
+        l=0
+        freq_map = collections.defaultdict(int)
+        for r in range(len(s)):
+            freq_map[s[r]]=freq_map.get(s[r],0)+1
+            max_freq = max(freq_map.values())
+            window_size = r-l+1
+            if window_size - max_freq <=k:
+                res= max(res,window_size)
+            else:
+                while window_size - max_freq > k:
+                    freq_map[s[l]]=freq_map[s[l]]-1
+                    if freq_map[s[l]]==0:
+                        del freq_map[s[l]]
+                    l=l+1
+                    window_size =  r-l+1
+                    max_freq = max(freq_map.values())
+        return res
 
 sol = Solution()
 s = "XYYXABC"
 s= "AABABBA"
 k = 1
-res = sol.characterReplacement(s,k)
+# res = sol.characterReplacement(s,k)
+res = sol.characterReplacement_forLoop(s,k)
 print(res)
